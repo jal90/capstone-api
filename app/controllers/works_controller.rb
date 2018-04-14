@@ -1,4 +1,4 @@
-class WorksController < ApplicationController
+class WorksController < ProtectedController
   before_action :set_work, only: [:show, :update, :destroy]
 
   # GET /works
@@ -49,6 +49,6 @@ class WorksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def work_params
-      params.require(:work).permit(:name, :mileage, :date)
+      params.require(:work).permit(:name, :mileage, :date, :vehicle_id)
     end
 end

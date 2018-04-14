@@ -1,4 +1,4 @@
-class WorksController < ProtectedController
+class WorksController < ApplicationController
   before_action :set_work, only: [:show, :update, :destroy]
 
   # GET /works
@@ -42,8 +42,9 @@ class WorksController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_work
-      @work = current_user.vehicles.find(params[:vehicle_id]).works
-                          .find(params[:work_id])
+      # @work = current_user.vehicles.find(params[:vehicle_id]).works
+      #                     .find(params[:work_id])
+      @work = current_user.works.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

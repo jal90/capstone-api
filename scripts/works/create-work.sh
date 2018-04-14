@@ -6,6 +6,9 @@ curl "http://localhost:4741/works" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
+    "vehicle": {
+      "vehicle_id": "'"${VEHICLE_ID}"'"
+    },
     "work": {
         "name": "'"${NAME}"'",
         "mileage": "'"${MILEAGE}"'",

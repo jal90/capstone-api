@@ -1,15 +1,15 @@
 #!/bin/bash
 
-curl "http://localhost:4741/vehicles/${ID}" \
+curl "http://localhost:4741/works/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "vehicle": {
-        "make": "'"${MAKE}"'",
-        "model": "'"${MODEL}"'",
-        "year": "'"${YEAR}"'"
+    "work": {
+        "name": "'"${NAME}"'",
+        "mileage": "'"${MILEAGE}"'",
+        "date": "'"${DATE}"'"
       }
   }'
 

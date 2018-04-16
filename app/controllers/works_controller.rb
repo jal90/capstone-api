@@ -3,7 +3,7 @@ class WorksController < ProtectedController
 
   # GET /works
   def index
-    @works = Work.all
+    @works = current_user.works
 
     render json: @works
   end
@@ -15,7 +15,7 @@ class WorksController < ProtectedController
 
   # POST /works
   def create
-    @work = Work.create(work_params)
+    @work = current_user.works.build(work_params)
 
     if @work.save
       render json: @work, status: :created, location: @work
@@ -42,11 +42,9 @@ class WorksController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_work
-      # @work = current_user.vehicles.find(params[:vehicle_id]).works
-      #                     .find(params[:work_id])
-      # @work = current_user.vehicle.works.find(params[:id])
-      @ work = Work.find(params[:id])
-      @work.vehicle.current_user(id) !== current_user.id
+      # thanks to the magic of the users have many works :through vehicles,
+        # this is possible
+      @work = current_user.works.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

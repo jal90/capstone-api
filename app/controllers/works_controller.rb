@@ -44,7 +44,9 @@ class WorksController < ProtectedController
     def set_work
       # @work = current_user.vehicles.find(params[:vehicle_id]).works
       #                     .find(params[:work_id])
-      @work = current_user.works.find(params[:id])
+      # @work = current_user.vehicle.works.find(params[:id])
+      @ work = Work.find(params[:id])
+      @work.vehicle.current_user(id) !== current_user.id
     end
 
     # Only allow a trusted parameter "white list" through.

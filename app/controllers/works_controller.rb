@@ -5,6 +5,8 @@ class WorksController < ProtectedController
   def index
     @works = current_user.works
 
+    Rails.logger.debug("Work Params: #{params[:vehicle_id].inspect}")
+
     render json: @works
   end
 

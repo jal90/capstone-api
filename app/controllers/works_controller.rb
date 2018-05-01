@@ -51,6 +51,6 @@ class WorksController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def work_params
-      params.require(:work).permit(:name, :mileage, :date, :vehicle_id)
+      params.require(:work).permit(:name, :mileage, :date, :vehicle_id, :price)
     end
 end

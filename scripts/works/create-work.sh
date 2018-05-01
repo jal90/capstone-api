@@ -10,6 +10,7 @@ curl "http://localhost:4741/works" \
         "name": "'"${NAME}"'",
         "mileage": "'"${MILEAGE}"'",
         "date": "'"${DATE}"'",
+        "price": "'"${PRICE}"'",
         "vehicle_id": "'"${VEHICLE_ID}"'"
       }
   }'

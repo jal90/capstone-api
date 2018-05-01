@@ -9,7 +9,8 @@ curl "http://localhost:4741/works/${ID}" \
     "work": {
         "name": "'"${NAME}"'",
         "mileage": "'"${MILEAGE}"'",
-        "date": "'"${DATE}"'"
+        "date": "'"${DATE}"'",
+        "price": "'"${PRICE}"'"
       }
   }'
 
